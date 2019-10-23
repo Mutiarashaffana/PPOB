@@ -31,15 +31,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- <a href="index.html"><img src="<?= base_url()?>assets/images/logo.png" alt=""/></a> -->
   </div>
   <h2 class="form-heading">login</h2>
+  <?php
+	$pesan= $this->session->flashdata('notif');
+	if($pesan != null){
+		echo '<div class="alert alert-danger">'.$pesan.'</div>';
+	}
+  ?>
   <div class="app-cam">
-  <form class="form-auth-small" action="<?=base_url()?>index.php/login/login_cek" method="post">
+  <form class="form-auth-small" action="<?=base_url()?>index.php/Login/login_cek" method="post">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Username</label>
-									<input type="text" class="form-control" id="username" name="username" placeholder="Username">
+									<input type="text" class="form-control" name="username" placeholder="Username">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
-									<input type="password" class="form-control" id="password" name="password" value="" placeholder="Password">
+									<input type="password" class="form-control" name="password" placeholder="Password">
 								</div>
 								<!-- <div>
 									<p>belum punya akun? <a href="<?=base_url()?>index.php/register/index">daftar akun</a></p>
