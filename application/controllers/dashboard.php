@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller {
 	{
 		
 			$data['konten']="v_dashboard";
-			$this->load->view('template', $data);
+			$this->load->view('v_dashboard', $data);
 		} 
 	}
 
